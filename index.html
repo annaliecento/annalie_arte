@@ -1,0 +1,956 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description"
+        content="Annalié Cento - Actriz y Cantante profesional. Conoce su trayectoria, videos y contacta directamente.">
+    <meta name="theme-color" content="#1A3C5E">
+    <title>Annalié Cento | Actriz</title>
+    <!-- Google Fonts: Poppins para títulos, Inter para cuerpo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Poppins:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* ===== RESET & VARIABLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --crema: #FAFAFA;
+            --azul-profundo: #1A3C5E;
+            --azul-medio: #2D6A9F;
+            --amarillo-calido: #F4C542;
+            --amarillo-dorado: #D4A017;
+            --blanco: #ffffff;
+            --texto-oscuro: #1e2b37;
+            --gris-suave: #f0f2f5;
+            --sombra-suave: 0 10px 25px -8px rgba(0, 0, 0, 0.08);
+            --glass-bg: rgba(255, 255, 255, 0.15);
+            --glass-border: rgba(255, 255, 255, 0.3);
+            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --font-titulos: 'Poppins', sans-serif;
+            --font-cuerpo: 'Inter', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-cuerpo);
+            background-color: var(--crema);
+            color: var(--texto-oscuro);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        .titulo-seccion {
+            font-family: var(--font-titulos);
+            font-weight: 600;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ===== GLASS MORPHISM BASE ===== */
+        .glass {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 8px 32px rgba(26, 60, 94, 0.1);
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1200px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.9rem 2rem;
+            border-radius: 60px;
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .logo {
+            font-family: var(--font-titulos);
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--azul-profundo);
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.2rem;
+            list-style: none;
+            font-weight: 500;
+        }
+
+        .nav-links li a {
+            color: var(--azul-profundo);
+            font-size: 1rem;
+            position: relative;
+            padding: 0.3rem 0;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-links li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background-color: var(--amarillo-dorado);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links li a:hover {
+            color: var(--azul-medio);
+        }
+
+        .nav-links li a:hover::after {
+            width: 100%;
+        }
+
+        /* Hamburguesa */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 6px;
+            background: transparent;
+            border: none;
+            padding: 5px;
+        }
+
+        .hamburger span {
+            width: 28px;
+            height: 3px;
+            background: var(--azul-profundo);
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 7rem 2rem 3rem;
+            max-width: 1300px;
+            margin: 0 auto;
+            gap: 2rem;
+        }
+
+        .hero-content {
+            flex: 0 0 60%;
+            animation: fadeInLeft 1s ease-out;
+        }
+
+        .hero-image {
+            flex: 0 0 40%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            filter: drop-shadow(0 20px 30px rgba(26, 60, 94, 0.25));
+            border-radius: 40% 60% 30% 70% / 50% 40% 60% 50%;
+            background: transparent;
+        }
+
+        .hero h1 {
+            font-size: 4.2rem;
+            font-weight: 700;
+            color: var(--azul-profundo);
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-subtitulo {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--amarillo-dorado);
+            margin-bottom: 0.8rem;
+            font-family: var(--font-titulos);
+        }
+
+        .linea-decorativa {
+            width: 90px;
+            height: 4px;
+            background: linear-gradient(to right, var(--amarillo-calido), var(--amarillo-dorado));
+            margin: 1rem 0 1.5rem;
+            border-radius: 4px;
+        }
+
+        .hero-frase {
+            font-size: 1.3rem;
+            font-weight: 300;
+            color: #2d3e50;
+            max-width: 500px;
+            margin-top: 0.5rem;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* ===== SECCIÓN SOBRE MÍ ===== */
+        .sobre-mi {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .sobre-mi-imagen {
+            flex: 0 0 45%;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 25px 40px -15px rgba(26, 60, 94, 0.35);
+            transition: transform 0.4s;
+        }
+
+        .sobre-mi-imagen img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            aspect-ratio: 4/5;
+        }
+
+        .sobre-mi-texto {
+            flex: 0 0 55%;
+        }
+
+        .sobre-mi-texto h2 {
+            font-size: 2.5rem;
+            color: var(--azul-profundo);
+            margin-bottom: 1.5rem;
+        }
+
+        .sobre-mi-texto p {
+            margin-bottom: 1.2rem;
+            font-weight: 400;
+            color: #2d3a45;
+        }
+
+        .habilidades-lista {
+            list-style: none;
+            margin: 1.8rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .habilidades-lista li {
+            background: rgba(45, 106, 159, 0.08);
+            padding: 0.4rem 1.2rem;
+            border-radius: 30px;
+            font-weight: 500;
+            color: var(--azul-medio);
+        }
+
+        .btn-cv {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: var(--amarillo-calido);
+            color: var(--azul-profundo);
+            font-weight: 700;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            margin-top: 1.8rem;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 18px rgba(212, 160, 23, 0.3);
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+        }
+
+        .btn-cv:hover {
+            background: var(--amarillo-dorado);
+            box-shadow: 0 12px 24px rgba(212, 160, 23, 0.5);
+            transform: translateY(-2px);
+        }
+
+        /* Efecto de brillo */
+        .btn-cv::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 40%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.4);
+            transform: rotate(25deg);
+            transition: left 0.5s ease;
+        }
+
+        .btn-cv:hover::after {
+            left: 120%;
+        }
+
+        /* ===== ESTILOS GALERÍA (agregar dentro del <style> principal) ===== */
+        .seccion-galeria {
+            padding: 4rem 2rem 5rem;
+            max-width: 1300px;
+            margin: 0 auto;
+            background-color: var(--crema);
+        }
+
+        .subtitulo-galeria {
+            text-align: center;
+            color: #4a5c6c;
+            margin-bottom: 3rem;
+            font-weight: 300;
+            font-size: 1.1rem;
+            margin-top: -0.5rem;
+        }
+
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        /* Tarjeta individual */
+        .galeria-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 12px 28px rgba(26, 60, 94, 0.08);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .galeria-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 22px 40px rgba(26, 60, 94, 0.18);
+        }
+
+        /* Contenedor del texto SUPERIOR */
+        .galeria-texto-superior {
+            padding: 1.3rem 1.2rem 0.8rem;
+            font-family: var(--font-titulos);
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: var(--azul-profundo);
+            text-align: center;
+            letter-spacing: -0.2px;
+            background: white;
+        }
+
+        /* Imagen cuadrada uniforme */
+        .galeria-imagen {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            /* Cuadrado perfecto */
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+            background: #f0f0f0;
+        }
+
+        .galeria-card:hover .galeria-imagen {
+            transform: scale(1.04);
+        }
+
+        /* Pie de foto (nombre debajo de imagen) */
+        .galeria-pie {
+            padding: 0.9rem 1rem;
+            background: white;
+            font-weight: 500;
+            font-size: 1rem;
+            color: var(--azul-medio);
+            text-align: center;
+            border-top: 1px solid rgba(0, 0, 0, 0.04);
+            font-family: var(--font-cuerpo);
+        }
+
+        /* ===== VIDEOS ===== */
+        .seccion-videos {
+            padding: 4rem 2rem 5rem;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .titulo-seccion {
+            font-size: 2.5rem;
+            color: var(--azul-profundo);
+            text-align: center;
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .titulo-seccion::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 20%;
+            width: 60%;
+            height: 3px;
+            background: var(--amarillo-dorado);
+            border-radius: 2px;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            grid-auto-rows: auto;
+            gap: 1.8rem;
+            margin-top: 3.5rem;
+        }
+
+        /* Diferentes spans para efecto masonry */
+        .video-card:nth-child(1) {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .video-card:nth-child(4) {
+            grid-column: span 2;
+        }
+
+        .video-card:nth-child(7) {
+            grid-column: span 2;
+        }
+
+        .video-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--sombra-suave);
+            transition: transform 0.3s ease, box-shadow 0.3s;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .video-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 30px rgba(26, 60, 94, 0.18);
+        }
+
+        .thumbnail-wrapper {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 16/9;
+        }
+
+        .thumbnail-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s;
+        }
+
+        .video-card:hover .thumbnail-wrapper img {
+            transform: scale(1.04);
+        }
+
+        .overlay-hover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(244, 197, 66, 0.2);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .video-card:hover .overlay-hover {
+            opacity: 1;
+            background: rgba(244, 197, 66, 0.35);
+        }
+
+        .video-info {
+            padding: 1rem 1.2rem;
+        }
+
+        .video-info h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--azul-profundo);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--azul-profundo);
+            color: white;
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.8rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+            font-size: 1.8rem;
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Colores específicos al hover */
+        .social-icon.icon-whatsapp:hover {
+            background: #25D366;
+        }
+
+        .social-icon.icon-gmail:hover {
+            background: #EA4335;
+        }
+
+        .social-icon.icon-youtube:hover {
+            background: #FF0000;
+        }
+
+        .social-icon.icon-instagram:hover {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+        }
+
+        .social-icon.icon-facebook:hover {
+            background: #1877F2;
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            font-weight: 300;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 0.8rem 1.5rem;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: rgba(255, 255, 255, 0.25);
+                backdrop-filter: blur(35px);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2.5rem;
+                transform: translateX(100%);
+                transition: 0.4s ease;
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                transform: translateX(0);
+            }
+
+            .hamburger {
+                display: flex;
+                z-index: 1001;
+            }
+
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding-top: 8rem;
+            }
+
+            .hero-content,
+            .hero-image {
+                flex: 1 1 auto;
+                width: 100%;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .sobre-mi {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .sobre-mi-imagen,
+            .sobre-mi-texto {
+                flex: 1 1 auto;
+                width: 100%;
+            }
+
+            .video-card:nth-child(1),
+            .video-card:nth-child(4),
+            .video-card:nth-child(7) {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-subtitulo {
+                font-size: 1.5rem;
+            }
+
+            .galeria-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .galeria-texto-superior {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAVBAR GLASS -->
+    <nav class="navbar glass">
+        <div class="logo">Annalié Cento</div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#sobre-mi">Sobre Mí</a></li>
+            <li><a href="#videos">Vídeos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Menú">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Annalié Cento</h1>
+            <div class="hero-subtitulo">Actriz</div>
+            <div class="linea-decorativa"></div>
+            <p class="hero-frase">"Transformando emociones en arte, en el escenario y frente a la cámara."</p>
+        </div>
+        <div class="hero-image">
+            <!-- Imagen placeholder de Unsplash: mujer artística fondo transparente (estilo PNG) -->
+            <img src="IMG\Para web1.jpg" alt="Annalié Cento actriz" loading="eager">
+            <!-- Reemplazar por: paula-hero.png -->
+        </div>
+    </section>
+
+    <!-- SOBRE MÍ / CV -->
+    <section id="sobre-mi" class="sobre-mi">
+        <div class="sobre-mi-imagen">
+            <img src="IMG\Para web 2.jpg" alt="Annalié Cento retrato artístico" loading="lazy">
+
+            <!-- Reemplazar por: paula-sobremi.jpg -->
+        </div>
+        <div class="sobre-mi-texto">
+            <h2>Sobre Mí</h2>
+            <p>Annalie Cento es una actriz y comunicadora cubana con experiencia en televisión, teatro, cine, modelaje y
+                docencia. En actuación ante cámara, ha protagonizado los cortometrajes "Paulilla", "Islas Náufragas" y
+                participado en varias entregas de cámaras ocultas para el programa canadiense Just for Laughs Gags. En
+                teatro, integra actualmente la Compañía Teatral El Público con la obra "Réquiem por Yarini". Como
+                presentadora y locutora, ha conducido los programas juveniles "De tú a tú" (TV Camagüey) y "Razones"
+                (Canal Educativo). También incursionó en el modelaje artístico como protagonista de la serie
+                "Combustión" del artista Roberto Ruiz. </p>
+            <p> En el ámbito pedagógico, impartió clases a niños de 8 a 14 años
+                en el Centro Loyola Iglesia San José. Su formación incluye estudios en FANCA e ICAIC (Camagüey, 2022).
+                Con un perfil versátil que abarca tanto el trabajo frente a cámaras como el escenario, Annalie demuestra
+                capacidad de adaptación a distintos formatos y públicos, desde la actuación cómica de situaciones reales
+                hasta el drama teatral y la conducción juvenil educativa. Su experiencia docente evidencia habilidades
+                de comunicación y trabajo con menores. En conjunto, es una artista joven con sólida base institucional,
+                recursos expresivos para la comedia y el drama, y competencias en locución, modelaje y enseñanza.</p>
+
+            <!--<ul class="habilidades-lista">
+                <li>Teatro clásico</li>
+                <li>Canto lírico</li>
+                <li>Improvisación</li>
+                <li>Doblaje</li>
+                <li>Inglés bilingüe</li>
+                <li>Francés intermedio</li>
+            </ul>-->
+            <a href="FILE/Curriculum Vitae de Annalie Cento.pdf" class="btn-cv" download>
+                Descargar CV
+            </a>
+            <!-- Asegurar que el archivo cv-paula-morales.pdf esté en la raíz del repositorio -->
+        </div>
+    </section>
+
+    <!-- ===== SECCIÓN: GALERÍA DE ARTE / PROYECTOS ===== -->
+    <section id="galeria" class="seccion-galeria">
+        <h2 class="titulo-seccion">Galería de Proyectos</h2>
+        <p class="subtitulo-galeria">Explora algunos momentos destacados de mi carrera</p>
+
+        <div class="galeria-grid" id="galeriaGrid">
+            <!-- Las tarjetas se generan dinámicamente con JavaScript -->
+        </div>
+    </section>
+
+    <!-- VIDEOS -->
+    <section id="videos" class="seccion-videos">
+        <h2 class="titulo-seccion">Mis Vídeos</h2>
+        <div class="video-grid" id="videoGrid"></div>
+        <!-- Los videos se cargan dinámicamente desde JavaScript -->
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="contacto">
+        <div class="social-icons">
+            <a href="https://wa.me/qr/BDM4FDBG5LJ3C1" class="social-icon icon-whatsapp" aria-label="WhatsApp">💬</a>
+            <a href="mailto:anncentoisa@gmail.com" class="social-icon icon-gmail" aria-label="Gmail">✉️</a>
+            <a href="https://youtube.com/@annaliecento?si=D-3DJgnpJ99r9a6_" class="social-icon icon-youtube" aria-label="YouTube">▶️</a>
+            <a href="https://www.instagram.com/ann_cento?utm_source=qr&igsh=N3d2MGJwdWh5aWVy" class="social-icon icon-instagram" aria-label="Instagram">📷</a>
+            
+        </div>
+        <p><a href="https://vascoproductions.github.io/vasco.production/">Created by Josué</a></p>
+        <p class="copyright">© 2026 Annalié Cento. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        (function () {
+            // === MENÚ HAMBURGUESA ===
+            const hamburger = document.getElementById('hamburgerBtn');
+            const navLinks = document.getElementById('navLinks');
+
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+
+            // Cerrar menú al hacer clic en enlace
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                });
+            });
+
+            // === SMOOTH SCROLL (para navegación interna) ===
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+
+            // === CARGA DE VIDEOS (Array manual con datos realistas) ===
+            // Para actualizar: modificar este array con nuevos thumbnails, títulos y enlaces.
+            const videos = [
+                {
+                    titulo: "Fragmento de Te sigo esperando, de Héctor Quintero",
+                    thumbnail: "IMG/video1.jpg",
+                    url: "https://youtube.com/shorts/NCQ5fIsWEtA?si=unRDIblasONV9qEG"
+                },
+                {
+                    titulo: "Escena de teatro cubano: Réquiem por Yarini",
+                    thumbnail: "IMG/video2.jpg",
+                    url: "https://youtube.com/shorts/0ijXW9hvPW0?si=WYhx7pG15JLmezg_"
+                }
+            ];
+
+            const videoGrid = document.getElementById('videoGrid');
+
+            function renderVideos() {
+                if (!videoGrid) return;
+                videoGrid.innerHTML = videos.map(video => `
+          <div class="video-card" onclick="window.open('${video.url}', '_blank')">
+            <div class="thumbnail-wrapper">
+              <img src="${video.thumbnail}" alt="${video.titulo}" loading="lazy">
+              <div class="overlay-hover"></div>
+            </div>
+            <div class="video-info">
+              <h3>${video.titulo}</h3>
+            </div>
+          </div>
+        `).join('');
+            }
+
+            renderVideos();
+
+            // Nota: Si se desea consumir feed de YouTube (sin API key) se podría usar:
+            // https://www.youtube.com/feeds/videos.xml?channel_id=UC...
+            // Pero requiere CORS o proxy. Por simplicidad usamos array manual.
+        })();
+
+
+        // ===== DATOS DE LA GALERÍA (array de objetos) =====
+        const proyectosGaleria = [
+            {
+                titulo: "Trabajo de silencio orgánico",
+                nombre: "",
+                imagen: "IMG/tbso1.jpg"
+            },
+            {
+                titulo: "Trabajo de silencio orgánico",
+                nombre: "",
+                imagen: "IMG/tbso2.jpg"
+            },
+            {
+                titulo: "Trabajo de silencio orgánico",
+                nombre: "",
+                imagen: "IMG/tbso3.jpg"
+            },
+            {
+                titulo: "Serie Combustión",
+                nombre: "",
+                imagen: "IMG/scomb_f.jpg"
+            },
+            {
+                titulo: "Personaje de figuración, pelicula americana",
+                nombre: "",
+                imagen: "IMG/pfpa.jpg"
+            },
+            {
+                titulo: "Monólogo",
+                nombre: "",
+                imagen: "IMG/medpp1.jpg"
+            },
+            {
+                titulo: "Monólogo",
+                nombre: "",
+                imagen: "IMG/medpp2.jpg"
+            },
+            {
+                titulo: "Monólogo",
+                nombre: "",
+                imagen: "IMG/medpp3.jpg"
+            },
+            {
+                titulo: "Réquiem por Yarini",
+                nombre: "",
+                imagen: "IMG/rpy.jpg"
+            },
+            {
+                titulo: "La java",
+                nombre: "De la obra de Carlos Felipe, Réquiem por Yarini",
+                imagen: "IMG/ljodcfrdy.jpg"
+            },
+            {
+                titulo: "Te sigo esperando, de Héctor Quintero",
+                nombre: "",
+                imagen: "IMG/tsehq1.jpg"
+            },
+            {
+               titulo: "Te sigo esperando, de Héctor Quintero",
+                nombre: "",
+                imagen: "IMG/tsehq2.jpg"
+            },
+            {
+                titulo: "Programa de Televisión 'Razones'",
+                nombre: "",
+                imagen: "IMG/pr.jpg"
+            },
+            {
+                titulo: "Los magos de Caín, de Alberto Estorino",
+                nombre: "",
+                imagen: "IMG/lmcae.jpg"
+            },
+            {
+                titulo: "Máscara Callejera 'La Muda'",
+                nombre: "",
+                imagen: "IMG/mclm.jpg"
+            }
+        ];
+
+        // Renderizar galería
+        function renderizarGaleria() {
+            const contenedor = document.getElementById('galeriaGrid');
+            if (!contenedor) return;
+
+            contenedor.innerHTML = proyectosGaleria.map(proyecto => `
+      <div class="galeria-card">
+        <!-- TEXTO ARRIBA DE LA IMAGEN -->
+        <div class="galeria-texto-superior">${proyecto.titulo}</div>
+        <!-- IMAGEN CUADRADA -->
+        <img src="${proyecto.imagen}" alt="${proyecto.titulo}" class="galeria-imagen" loading="lazy">
+        <!-- NOMBRE DEBAJO DE LA IMAGEN -->
+        <div class="galeria-pie">${proyecto.nombre}</div>
+      </div>
+    `).join('');
+        }
+
+        // Ejecutar cuando el DOM esté listo
+        document.addEventListener('DOMContentLoaded', renderizarGaleria);
+        // También por si el script se carga después
+        if (document.readyState === 'complete' || document.readyState === 'interactive') {
+            setTimeout(renderizarGaleria, 50);
+        }
+
+    </script>
+</body>
+
+</html>
